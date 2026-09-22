@@ -1,0 +1,69 @@
+{
+  "regions": [
+    {
+      "id": "zona-utara",
+      "name": "Kawasan Rekreasi (Utara)",
+      "coordinates": [110.3785, -7.1178]
+    },
+    {
+      "id": "zona-selatan",
+      "name": "Kawasan Pintu & Kuliner (Selatan)",
+      "coordinates": [110.3795, -7.1188]
+    }
+  ],
+  "pois": [
+    {
+      "id": "monas-tower",
+      "name": "Wahana Utama",
+      "slug": "wahana-utama",
+      "category": "rides",
+      "subcategory": "family",
+      "regionId": "zona-utara",
+      "coordinates": [110.3780, -7.1180],
+      "thumbnailUrl": "/placeholder-monas.jpg",
+      "description": "Pusat wahana rekreasi untuk melihat pemandangan sekitar.",
+      "meta": {
+        "openHours": "08:00 - 16:00",
+        "ticketRequired": true
+      }
+    },
+    {
+      "id": "toilet-selatan",
+      "name": "Toilet Utara",
+      "slug": "toilet-utara",
+      "category": "facility",
+      "subcategory": "toilet",
+      "regionId": "zona-utara",
+      "coordinates": [110.3785, -7.1175],
+      "thumbnailUrl": "/placeholder-toilet.jpg",
+      "description": "Fasilitas toilet pria, wanita, dan disabilitas.",
+      "meta": {}
+    },
+    {
+      "id": "lenggang-jakarta",
+      "name": "Pusat Kuliner",
+      "slug": "pusat-kuliner",
+      "category": "food",
+      "subcategory": "resto",
+      "regionId": "zona-selatan",
+      "coordinates": [110.3790, -7.1185],
+      "thumbnailUrl": "/placeholder-food.jpg",
+      "description": "Pusat kuliner yang menyediakan berbagai macam makanan khas nusantara.",
+      "meta": {
+        "openHours": "09:00 - 22:00",
+        "isHalal": true
+      }
+    },
+    {
+      "id": "gate-irti",
+      "name": "Pintu Masuk Utama",
+      "slug": "gate-utama",
+      "category": "gate",
+      "regionId": "zona-selatan",
+      "coordinates": [110.3800, -7.1190],
+      "thumbnailUrl": "/placeholder-gate.jpg",
+      "description": "Pintu masuk utama kawasan.",
+      "meta": {}
+    }
+  ]
+}
