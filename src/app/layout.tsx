@@ -1,24 +1,18 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
+const plusJakartaSans = Plus_Jakarta_Sans({
+  variable: '--font-sans',
   subsets: ['latin'],
 });
 
 export const metadata: Metadata = {
   title: {
-    default: 'Enterprise Next.js Template',
-    template: '%s | Enterprise Next.js Template',
+    default: 'SinergiMP Maps',
+    template: '%s | SinergiMP Maps',
   },
-  description:
-    'A scalable, modular, enterprise-grade Next.js 16 template with TypeScript, TanStack Query, Zustand, and more.',
+  description: 'Aplikasi peta interaktif kawasan SinergiMP',
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_APP_URL ?? 'http://localhost:3000'
   ),
@@ -36,9 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${plusJakartaSans.variable} antialiased`}>
         {children}
       </body>
     </html>

@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { Toaster } from '@/components/ui/sonner';
-import { QueryProvider } from '@/providers/query-provider';
-import { getDictionary, isValidLocale, type Locale } from '@/lib/i18n';
+import { isValidLocale } from '@/lib/i18n';
 import { notFound } from 'next/navigation';
 
 interface LangLayoutProps {
@@ -21,10 +20,10 @@ export async function generateMetadata({
   const { lang } = await params;
   const isId = lang === 'id';
   return {
-    title: isId ? 'Template Enterprise Next.js' : 'Enterprise Next.js Template',
+    title: isId ? 'Peta SinergiMP' : 'SinergiMP Maps',
     description: isId
-      ? 'Template Next.js enterprise-grade yang modular dan skalabel.'
-      : 'A scalable, modular, enterprise-grade Next.js 16 template.',
+      ? 'Peta kawasan interaktif SinergiMP'
+      : 'Interactive area map for SinergiMP',
   };
 }
 
@@ -39,13 +38,10 @@ export default async function LangLayout({ children, params }: LangLayoutProps) 
     notFound();
   }
 
-  // Pre-load the dictionary — passed to child Server Components via props
-  await getDictionary(lang as Locale);
-
   return (
-    <QueryProvider>
+    <>
       {children}
       <Toaster richColors position="top-right" />
-    </QueryProvider>
+    </>
   );
 }
