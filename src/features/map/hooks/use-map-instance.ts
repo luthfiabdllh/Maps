@@ -17,7 +17,7 @@ export function useMapInstance(containerRef: React.RefObject<HTMLDivElement | nu
 
     map.current = new mapboxgl.Map({
       container: containerRef.current,
-      style: "mapbox://styles/mapbox/light-v11",
+      style: "mapbox://styles/mapbox/standard",
       center: [110.379189, -7.118471],
       zoom: 17,
       minZoom: 16,
@@ -29,9 +29,27 @@ export function useMapInstance(containerRef: React.RefObject<HTMLDivElement | nu
       attributionControl: false,
     });
 
+    map.current.on('style.load', () => {
+      const hour = new Date().getHours();
+      let lightPreset = "day";
+      
+      if (hour >= 4 && hour < 8) {
+        lightPreset = "dawn";
+      } else if (hour >= 8 && hour < 16) {
+        lightPreset = "day";
+      } else if (hour >= 16 && hour < 19) {
+        lightPreset = "dusk";
+      } else {
+        lightPreset = "night";
+      }
+
+      map.current?.setConfigProperty('basemap', 'lightPreset', lightPreset);
+      map.current?.setConfigProperty('basemap', 'theme', 'monochrome');
+    });
+
     map.current.addControl(
       new mapboxgl.NavigationControl({ showCompass: true, showZoom: true }),
-      "top-right"
+      "bottom-right"
     );
 
     map.current.addControl(
@@ -42,7 +60,7 @@ export function useMapInstance(containerRef: React.RefObject<HTMLDivElement | nu
         trackUserLocation: true,
         showUserHeading: true,
       }),
-      "top-right"
+      "bottom-right"
     );
 
     return () => {

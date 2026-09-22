@@ -5,7 +5,7 @@ const INITIAL_IMAGE_COORDINATES: [
   [number, number],
   [number, number],
   [number, number],
-  [number, number]
+  [number, number],
 ] = [
   [110.37750734237923, -7.117204094724613],
   [110.38073597835697, -7.117204094724613],
@@ -16,7 +16,9 @@ const INITIAL_IMAGE_COORDINATES: [
 export type ImageCoords = typeof INITIAL_IMAGE_COORDINATES;
 
 export function useMapOverlay(map: React.RefObject<mapboxgl.Map | null>) {
-  const [debugCoords, setDebugCoords] = useState<ImageCoords>(INITIAL_IMAGE_COORDINATES);
+  const [debugCoords, setDebugCoords] = useState<ImageCoords>(
+    INITIAL_IMAGE_COORDINATES,
+  );
 
   useEffect(() => {
     if (!map.current) return;
