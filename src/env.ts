@@ -13,9 +13,9 @@ export const env = createEnv({
    * Client-side environment variables — prefixed with NEXT_PUBLIC_.
    */
   client: {
-    NEXT_PUBLIC_APP_URL: z.url(),
-    NEXT_PUBLIC_API_URL: z.url(),
-    NEXT_PUBLIC_MAPBOX_TOKEN: z.string().min(1),
+    NEXT_PUBLIC_APP_URL: z.url().default('http://localhost:3000'),
+    NEXT_PUBLIC_API_URL: z.url().default('http://localhost:3000/api'),
+    NEXT_PUBLIC_MAPBOX_TOKEN: z.string().default(''),
   },
 
   /**
