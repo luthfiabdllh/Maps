@@ -15,47 +15,128 @@ const INITIAL_IMAGE_COORDINATES: [
 
 export type ImageCoords = typeof INITIAL_IMAGE_COORDINATES;
 
-export function useMapOverlay(map: React.RefObject<mapboxgl.Map | null>) {
+export function useMapOverlay(map: React.RefObject<mapboxgl.Map | null>, lightPreset: string) {
   const [debugCoords, setDebugCoords] = useState<ImageCoords>(
     INITIAL_IMAGE_COORDINATES,
   );
 
+  const targetUrl = `/peta-illustrasi-${
+    lightPreset === 'day' ? 'light' : lightPreset === 'night' ? 'dark' : lightPreset
+  }.webp`;
+
+  // Preload all 4 illustration images in the background so theme switches are instant
+  useEffect(() => {
+    const imagesToPreload = [
+      '/peta-illustrasi-light.webp',
+      '/peta-illustrasi-dark.webp',
+      '/peta-illustrasi-dawn.webp',
+      '/peta-illustrasi-dusk.webp',
+    ];
+    imagesToPreload.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
+
+  // Main effect: Add or update the overlay image
   useEffect(() => {
     if (!map.current) return;
-
     const mapInstance = map.current;
 
-    const handleLoad = () => {
+    const addOrUpdateOverlay = () => {
+      const existingSource = mapInstance.getSource("illustration-map") as
+        | mapboxgl.ImageSource
+        | undefined;
+
+      if (existingSource) {
+        existingSource.updateImage({
+          url: targetUrl,
+          coordinates: debugCoords,
+        });
+        mapInstance.triggerRepaint();
+        return;
+      }
+
       if (!mapInstance.getSource("illustration-map")) {
         mapInstance.addSource("illustration-map", {
           type: "image",
-          url: "/peta-ilustrasi.png",
+          url: targetUrl,
           coordinates: debugCoords,
         });
+      }
 
+      if (!mapInstance.getLayer("illustration-layer")) {
         mapInstance.addLayer({
           id: "illustration-layer",
           type: "raster",
           source: "illustration-map",
+          slot: "top",
           paint: {
-            "raster-opacity": 0.9,
+            "raster-opacity": 1,
             "raster-fade-duration": 0,
+            "raster-emissive-strength": 1,
+          },
+        });
+      }
+      mapInstance.triggerRepaint();
+    };
+
+    // If source is already present, update immediately (does not require style to be idle)
+    const existingSource = mapInstance.getSource("illustration-map") as
+      | mapboxgl.ImageSource
+      | undefined;
+
+    if (existingSource) {
+      existingSource.updateImage({
+        url: targetUrl,
+        coordinates: debugCoords,
+      });
+      mapInstance.triggerRepaint();
+      return;
+    }
+
+    if (mapInstance.isStyleLoaded() || mapInstance.loaded()) {
+      addOrUpdateOverlay();
+    } else {
+      mapInstance.once("load", addOrUpdateOverlay);
+      mapInstance.once("style.load", addOrUpdateOverlay);
+    }
+  }, [map, targetUrl, debugCoords]);
+
+  // Handle re-adding overlay if Mapbox style is reloaded
+  useEffect(() => {
+    if (!map.current) return;
+    const mapInstance = map.current;
+
+    const handleStyleReload = () => {
+      if (!mapInstance.getSource("illustration-map")) {
+        mapInstance.addSource("illustration-map", {
+          type: "image",
+          url: targetUrl,
+          coordinates: debugCoords,
+        });
+      }
+
+      if (!mapInstance.getLayer("illustration-layer")) {
+        mapInstance.addLayer({
+          id: "illustration-layer",
+          type: "raster",
+          source: "illustration-map",
+          slot: "top",
+          paint: {
+            "raster-opacity": 1,
+            "raster-fade-duration": 0,
+            "raster-emissive-strength": 1,
           },
         });
       }
     };
 
-    if (mapInstance.loaded()) {
-      handleLoad();
-    } else {
-      mapInstance.on("load", handleLoad);
-    }
-
+    mapInstance.on("style.load", handleStyleReload);
     return () => {
-      mapInstance.off("load", handleLoad);
+      mapInstance.off("style.load", handleStyleReload);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [map]);
+  }, [map, targetUrl, debugCoords]);
 
   const scaleImage = (factor: number) => {
     if (!map.current) return;
@@ -77,3 +158,4 @@ export function useMapOverlay(map: React.RefObject<mapboxgl.Map | null>) {
 
   return { debugCoords, scaleImage, setDebugCoords };
 }
+

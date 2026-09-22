@@ -1,12 +1,13 @@
 "use client";
 
 import * as React from "react";
-import { Moon, Sun, Monitor } from "lucide-react";
+import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
+import { ThemeToggler, type ThemeSelection, type Resolved } from "./animate-ui/primitives/effects/theme-toggler";
 
 export function ThemeToggle() {
-  const { theme, setTheme } = useTheme();
+  const { theme, resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = React.useState(false);
 
   React.useEffect(() => {
@@ -22,23 +23,26 @@ export function ThemeToggle() {
     );
   }
 
-  const toggleTheme = () => {
-    if (theme === "light") setTheme("dark");
-    else if (theme === "dark") setTheme("system");
-    else setTheme("light");
-  };
-
   return (
-    <Button 
-      variant="outline" 
-      size="icon" 
-      onClick={toggleTheme} 
-      className="bg-white/95 dark:bg-black/50 backdrop-blur-sm shadow-md rounded-full border-0 pointer-events-auto text-foreground"
+    <ThemeToggler
+      theme={theme as ThemeSelection || "system"}
+      resolvedTheme={resolvedTheme as Resolved || "light"}
+      setTheme={setTheme}
     >
-      {theme === "light" && <Sun className="h-5 w-5" />}
-      {theme === "dark" && <Moon className="h-5 w-5" />}
-      {theme === "system" && <Monitor className="h-5 w-5" />}
-      <span className="sr-only">Toggle theme</span>
-    </Button>
+      {({ effective, toggleTheme }) => (
+        <Button 
+          variant="outline" 
+          size="icon" 
+          onClick={() => {
+            toggleTheme(effective === "light" ? "dark" : "light");
+          }} 
+          className="bg-white/95 dark:bg-black/50 backdrop-blur-sm shadow-md rounded-full border-0 pointer-events-auto text-foreground"
+        >
+          {effective === "light" && <Sun className="h-5 w-5" />}
+          {effective === "dark" && <Moon className="h-5 w-5" />}
+          <span className="sr-only">Toggle theme</span>
+        </Button>
+      )}
+    </ThemeToggler>
   );
 }

@@ -42,6 +42,7 @@ export function MapDetailPanel({ dict }: MapDetailPanelProps) {
       >
         <div className="relative w-full h-48 md:h-64 shrink-0 bg-muted">
           {activeData?.thumbnailUrl ? (
+            // eslint-disable-next-line @next/next/no-img-element
             <img src={activeData.thumbnailUrl} alt={activeData.name} className="w-full h-full object-cover" />
           ) : (
             <div className="w-full h-full flex flex-col items-center justify-center text-muted-foreground gap-2">

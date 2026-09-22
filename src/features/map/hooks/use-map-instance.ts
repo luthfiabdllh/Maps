@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useMemo } from "react";
 import mapboxgl from "mapbox-gl";
 import { env } from "@/env";
 
@@ -7,15 +7,40 @@ const MAX_BOUNDS: mapboxgl.LngLatBoundsLike = [
   [110.383, -7.115], // NE
 ];
 
-export function useMapInstance(containerRef: React.RefObject<HTMLDivElement | null>) {
-  const map = useRef<mapboxgl.Map | null>(null);
+export function getLightPreset(resolvedTheme?: string): "dawn" | "day" | "dusk" | "night" {
+  const hour = new Date().getHours();
+  if (resolvedTheme === 'light') {
+    return (hour >= 4 && hour < 8) ? "dawn" : "day";
+  } else if (resolvedTheme === 'dark') {
+    return (hour >= 16 && hour < 19) ? "dusk" : "night";
+  } else {
+    // Fallback if resolvedTheme is undefined
+    if (hour >= 4 && hour < 8) return "dawn";
+    if (hour >= 8 && hour < 16) return "day";
+    if (hour >= 16 && hour < 19) return "dusk";
+    return "night";
+  }
+}
 
+export function useMapInstance(containerRef: React.RefObject<HTMLDivElement | null>, resolvedTheme?: string) {
+  const map = useRef<mapboxgl.Map | null>(null);
+  
+  // Calculate lightPreset synchronously from resolvedTheme so consumer hooks
+  // (like useMapOverlay) get the updated preset immediately without async delay
+  const lightPreset = useMemo(() => getLightPreset(resolvedTheme), [resolvedTheme]);
+  const lightPresetRef = useRef(lightPreset);
+
+  useEffect(() => {
+    lightPresetRef.current = lightPreset;
+  }, [lightPreset]);
+
+  // 1. Initialize Map
   useEffect(() => {
     if (map.current || !containerRef.current) return;
 
     mapboxgl.accessToken = env.NEXT_PUBLIC_MAPBOX_TOKEN;
 
-    map.current = new mapboxgl.Map({
+    const mapInstance = new mapboxgl.Map({
       container: containerRef.current,
       style: "mapbox://styles/mapbox/standard",
       center: [110.379189, -7.118471],
@@ -29,30 +54,23 @@ export function useMapInstance(containerRef: React.RefObject<HTMLDivElement | nu
       attributionControl: false,
     });
 
-    map.current.on('style.load', () => {
-      const hour = new Date().getHours();
-      let lightPreset = "day";
-      
-      if (hour >= 4 && hour < 8) {
-        lightPreset = "dawn";
-      } else if (hour >= 8 && hour < 16) {
-        lightPreset = "day";
-      } else if (hour >= 16 && hour < 19) {
-        lightPreset = "dusk";
-      } else {
-        lightPreset = "night";
-      }
+    map.current = mapInstance;
 
-      map.current?.setConfigProperty('basemap', 'lightPreset', lightPreset);
-      map.current?.setConfigProperty('basemap', 'theme', 'monochrome');
+    mapInstance.on('style.load', () => {
+      try {
+        mapInstance.setConfigProperty('basemap', 'theme', 'monochrome');
+        mapInstance.setConfigProperty('basemap', 'lightPreset', lightPresetRef.current);
+      } catch {
+        // Style might not be fully configured yet
+      }
     });
 
-    map.current.addControl(
+    mapInstance.addControl(
       new mapboxgl.NavigationControl({ showCompass: true, showZoom: true }),
       "bottom-right"
     );
 
-    map.current.addControl(
+    mapInstance.addControl(
       new mapboxgl.GeolocateControl({
         positionOptions: {
           enableHighAccuracy: true,
@@ -64,10 +82,31 @@ export function useMapInstance(containerRef: React.RefObject<HTMLDivElement | nu
     );
 
     return () => {
-      map.current?.remove();
+      mapInstance.remove();
       map.current = null;
     };
   }, [containerRef]);
 
-  return map;
+  // 2. Sync Mapbox lightPreset with UI resolvedTheme & local time
+  useEffect(() => {
+    if (!map.current) return;
+    const mapInstance = map.current;
+
+    const applyTheme = () => {
+      try {
+        mapInstance.setConfigProperty('basemap', 'lightPreset', lightPreset);
+      } catch {
+        // Ignore error if style is transitioning
+      }
+    };
+
+    if (mapInstance.isStyleLoaded()) {
+      applyTheme();
+    } else {
+      mapInstance.once('styledata', applyTheme);
+    }
+  }, [lightPreset]);
+
+  return { map, lightPreset };
 }
+

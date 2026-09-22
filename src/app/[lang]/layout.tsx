@@ -42,7 +42,7 @@ export default async function LangLayout({ children, params }: LangLayoutProps) 
   }
 
   return (
-    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+    <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
       <TooltipProvider>
         {children}
         <Toaster richColors position="top-right" />

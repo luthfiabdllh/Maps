@@ -3,6 +3,7 @@
 import React, { useRef } from "react";
 import { type MapData } from "@/types/poi";
 import poiDataRaw from "@/lib/data/poi-data.json";
+import { useTheme } from "next-themes";
 import { useMapInstance } from "../hooks/use-map-instance";
 import { useMapOverlay } from "../hooks/use-map-overlay";
 import { usePoiMarkers } from "../hooks/use-poi-markers";
@@ -17,9 +18,10 @@ const DEBUG_ALIGNMENT = false;
 
 export function MapView() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const { resolvedTheme } = useTheme();
   
-  const map = useMapInstance(containerRef);
-  const { debugCoords, scaleImage } = useMapOverlay(map);
+  const { map, lightPreset } = useMapInstance(containerRef, resolvedTheme);
+  const { debugCoords, scaleImage } = useMapOverlay(map, lightPreset);
   const { markersRef } = usePoiMarkers(map, poiData);
   const { regionMarkersRef } = useRegionMarkers(map, regions);
   
