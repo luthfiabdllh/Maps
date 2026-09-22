@@ -23,7 +23,7 @@ export function MapHeader({ dict }: MapHeaderProps) {
   ];
 
   return (
-    <div className="absolute top-0 left-0 w-full z-10 bg-linear-to-b from-black/50 to-transparent p-4 pb-8 flex flex-col gap-3 pointer-events-none">
+    <div className="absolute top-0 left-0 w-full z-10 p-4 pb-8 flex flex-col gap-3 pointer-events-none">
       {/* Top Bar: Search & Theme Toggle */}
       <div className="flex w-full max-w-md mx-auto gap-2">
         <div className="relative w-full pointer-events-auto">
