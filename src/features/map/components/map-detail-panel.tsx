@@ -4,7 +4,8 @@ import React from 'react';
 import { useMapStore } from '@/store/map.store';
 import poiDataRaw from "@/lib/data/poi-data.json";
 import { type MapData, type POILocation } from "@/types/poi";
-import { Clock, Navigation } from 'lucide-react';
+import { Clock, Navigation, MapPin, Map } from 'lucide-react';
+import { DynamicLucideIcon } from '../lib/icon-resolver';
 import { type Dictionary } from '@/lib/dictionaries/en';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetDescription } from '@/components/ui/sheet';
 import { Skeleton } from '@/components/ui/skeleton';
@@ -58,6 +59,9 @@ export function MapDetailPanel({ dict }: MapDetailPanelProps) {
           <div className="flex flex-col gap-4">
             <SheetHeader className="text-left space-y-1">
               <div className="flex items-center gap-2 mb-2">
+                <span className="p-1.5 rounded-lg bg-primary/10 text-primary flex items-center justify-center">
+                  <DynamicLucideIcon icon={activeData?.icon} fallback={isPoi ? MapPin : Map} className="w-4 h-4" />
+                </span>
                 <span className="px-2.5 py-0.5 rounded-md text-xs font-semibold bg-primary/10 text-primary uppercase tracking-wider">
                   {isPoi ? getCategoryLabel((activeData as POILocation).category) : 'Wilayah'}
                 </span>

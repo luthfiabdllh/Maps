@@ -14,6 +14,7 @@ export interface RegionLocation {
   coordinates: [number, number];
   description?: string;
   thumbnailUrl?: string;
+  icon?: string;
 }
 
 export interface POILocation {
@@ -26,6 +27,7 @@ export interface POILocation {
   coordinates: [number, number]; // [Longitude, Latitude]
   thumbnailUrl: string;
   description: string;
+  icon?: string;
   meta?: POIMeta;
 }
 

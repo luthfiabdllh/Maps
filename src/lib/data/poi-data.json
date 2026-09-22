@@ -1,69 +1,224 @@
 {
   "regions": [
     {
-      "id": "zona-utara",
-      "name": "Kawasan Rekreasi (Utara)",
-      "coordinates": [110.3785, -7.1178]
+      "id": "zona-1",
+      "name": "Kawasan Kebun",
+      "coordinates": [110.380147, -7.118622],
+      "icon": "Trees",
+      "description": "Area perkebunan asri, gazebo santai, dan kabin penginapan Curcool Cabin."
     },
     {
-      "id": "zona-selatan",
-      "name": "Kawasan Pintu & Kuliner (Selatan)",
-      "coordinates": [110.3795, -7.1188]
+      "id": "zona-2",
+      "name": "Kawasan Cafe",
+      "coordinates": [110.378073, -7.11823],
+      "icon": "Coffee",
+      "description": "Pusat kuliner Cafe Curcool, kolam rekreasi, dan area parkir utama."
+    },
+    {
+      "id": "zona-3",
+      "name": "Kawasan Headquarter",
+      "coordinates": [110.378499, -7.118319],
+      "icon": "Building2",
+      "description": "Kantor manajemen operasional pusat dan area peternakan."
+    },
+    {
+      "id": "zona-4",
+      "name": "Kawasan Greenhouse",
+      "coordinates": [110.378811, -7.118066],
+      "icon": "Sprout",
+      "description": "Area budidaya tanaman modern greenhouse dan fasilitas pendukung."
     }
   ],
   "pois": [
     {
-      "id": "monas-tower",
-      "name": "Wahana Utama",
-      "slug": "wahana-utama",
+      "id": "poi-1",
+      "name": "Kolam 1",
+      "slug": "kolam-1",
       "category": "rides",
       "subcategory": "family",
-      "regionId": "zona-utara",
-      "coordinates": [110.3780, -7.1180],
+      "regionId": "zona-2",
+      "coordinates": [110.378261, -7.118062],
+      "icon": "Waves",
       "thumbnailUrl": "/placeholder-monas.jpg",
-      "description": "Pusat wahana rekreasi untuk melihat pemandangan sekitar.",
+      "description": "Kolam rekreasi air di area Kawasan Cafe.",
       "meta": {
-        "openHours": "08:00 - 16:00",
-        "ticketRequired": true
+        "openHours": "08:00 - 17:00",
+        "ticketRequired": false
       }
     },
     {
-      "id": "toilet-selatan",
-      "name": "Toilet Utara",
-      "slug": "toilet-utara",
-      "category": "facility",
-      "subcategory": "toilet",
-      "regionId": "zona-utara",
-      "coordinates": [110.3785, -7.1175],
-      "thumbnailUrl": "/placeholder-toilet.jpg",
-      "description": "Fasilitas toilet pria, wanita, dan disabilitas.",
-      "meta": {}
+      "id": "poi-2",
+      "name": "Kolam 2",
+      "slug": "kolam-2",
+      "category": "rides",
+      "subcategory": "family",
+      "regionId": "zona-2",
+      "coordinates": [110.378203, -7.118197],
+      "icon": "Waves",
+      "thumbnailUrl": "/placeholder-monas.jpg",
+      "description": "Kolam air alami penunjang suasana asri di area cafe.",
+      "meta": {
+        "openHours": "08:00 - 17:00",
+        "ticketRequired": false
+      }
     },
     {
-      "id": "lenggang-jakarta",
-      "name": "Pusat Kuliner",
-      "slug": "pusat-kuliner",
+      "id": "poi-3",
+      "name": "Cafe Curcool",
+      "slug": "cafe-curcool",
       "category": "food",
       "subcategory": "resto",
-      "regionId": "zona-selatan",
-      "coordinates": [110.3790, -7.1185],
+      "regionId": "zona-2",
+      "coordinates": [110.378106, -7.118154],
+      "icon": "Coffee",
       "thumbnailUrl": "/placeholder-food.jpg",
-      "description": "Pusat kuliner yang menyediakan berbagai macam makanan khas nusantara.",
+      "description": "Tempat nongkrong santai menyajikan aneka racikan kopi nikmat, minuman segar, dan hidangan lezat.",
       "meta": {
         "openHours": "09:00 - 22:00",
         "isHalal": true
       }
     },
     {
-      "id": "gate-irti",
-      "name": "Pintu Masuk Utama",
-      "slug": "gate-utama",
-      "category": "gate",
-      "regionId": "zona-selatan",
-      "coordinates": [110.3800, -7.1190],
-      "thumbnailUrl": "/placeholder-gate.jpg",
-      "description": "Pintu masuk utama kawasan.",
+      "id": "poi-4",
+      "name": "Gudang 1",
+      "slug": "gudang-1",
+      "category": "facility",
+      "subcategory": "toilet",
+      "regionId": "zona-2",
+      "coordinates": [110.377977, -7.118201],
+      "icon": "Warehouse",
+      "thumbnailUrl": "/placeholder-toilet.jpg",
+      "description": "Gudang logistik dan penyimpanan peralatan cafe & fasilitas.",
       "meta": {}
+    },
+    {
+      "id": "poi-5",
+      "name": "Gudang 2",
+      "slug": "gudang-2",
+      "category": "facility",
+      "subcategory": "toilet",
+      "regionId": "zona-2",
+      "coordinates": [110.377887, -7.118424],
+      "icon": "Warehouse",
+      "thumbnailUrl": "/placeholder-toilet.jpg",
+      "description": "Gudang penyimpanan perlengkapan perkebunan dan operasional.",
+      "meta": {}
+    },
+    {
+      "id": "poi-6",
+      "name": "Parkiran 1",
+      "slug": "parkiran-1",
+      "category": "facility",
+      "subcategory": "toilet",
+      "regionId": "zona-2",
+      "coordinates": [110.378058, -7.118379],
+      "icon": "Car",
+      "thumbnailUrl": "/placeholder-gate.jpg",
+      "description": "Area parkir barat yang luas untuk kendaraan roda dua dan roda empat pengunjung cafe.",
+      "meta": {
+        "openHours": "24 Jam"
+      }
+    },
+    {
+      "id": "poi-7",
+      "name": "Greenhouse",
+      "slug": "greenhouse",
+      "category": "facility",
+      "subcategory": "first_aid",
+      "regionId": "zona-4",
+      "coordinates": [110.378723, -7.118054],
+      "icon": "Sprout",
+      "thumbnailUrl": "/placeholder-toilet.jpg",
+      "description": "Rumah kaca modern ramah lingkungan untuk pembudidayaan tanaman hortikultura dan agrikultur.",
+      "meta": {
+        "openHours": "08:00 - 16:00"
+      }
+    },
+    {
+      "id": "poi-8",
+      "name": "Headquarter",
+      "slug": "headquarter",
+      "category": "facility",
+      "subcategory": "first_aid",
+      "regionId": "zona-3",
+      "coordinates": [110.378369, -7.118369],
+      "icon": "Building2",
+      "thumbnailUrl": "/placeholder-monas.jpg",
+      "description": "Pusat kantor administrasi dan operasional manajemen kawasan.",
+      "meta": {
+        "openHours": "08:00 - 17:00"
+      }
+    },
+    {
+      "id": "poi-9",
+      "name": "Kandang Ayam",
+      "slug": "kandang-ayam",
+      "category": "facility",
+      "subcategory": "toilet",
+      "regionId": "zona-3",
+      "coordinates": [110.378517, -7.118439],
+      "icon": "Egg",
+      "thumbnailUrl": "/placeholder-toilet.jpg",
+      "description": "Area peternakan ayam terpadu pendukung ekosistem pertanian alami.",
+      "meta": {}
+    },
+    {
+      "id": "poi-10",
+      "name": "Tower Sutet",
+      "slug": "tower-sutet",
+      "category": "facility",
+      "subcategory": "merchandise",
+      "regionId": "zona-1",
+      "coordinates": [110.3802, -7.118618],
+      "icon": "Zap",
+      "thumbnailUrl": "/placeholder-monas.jpg",
+      "description": "Menara transmisi listrik saluran udara tegangan ekstra tinggi (SUTET) penanda kawasan.",
+      "meta": {}
+    },
+    {
+      "id": "poi-11",
+      "name": "Curcool Cabin",
+      "slug": "curcool-cabin",
+      "category": "gate",
+      "regionId": "zona-1",
+      "coordinates": [110.38021, -7.119063],
+      "icon": "Home",
+      "thumbnailUrl": "/placeholder-gate.jpg",
+      "description": "Kabin penginapan privat dan nyaman di tengah asrinya alam terbuka kawasan kebun.",
+      "meta": {
+        "openHours": "Check-in 14:00 | Check-out 12:00"
+      }
+    },
+    {
+      "id": "poi-13",
+      "name": "Gazebo",
+      "slug": "gazebo",
+      "category": "food",
+      "subcategory": "snack",
+      "regionId": "zona-1",
+      "coordinates": [110.380079, -7.118577],
+      "icon": "Umbrella",
+      "thumbnailUrl": "/placeholder-food.jpg",
+      "description": "Gazebo teduh untuk berkumpul, bersantai, dan menikmati makanan ringan bersama keluarga.",
+      "meta": {
+        "openHours": "08:00 - 20:00",
+        "isHalal": true
+      }
+    },
+    {
+      "id": "poi-14",
+      "name": "Parkiran 2",
+      "slug": "parkiran-2",
+      "category": "facility",
+      "subcategory": "toilet",
+      "regionId": "zona-4",
+      "coordinates": [110.378999, -7.118113],
+      "icon": "Car",
+      "thumbnailUrl": "/placeholder-gate.jpg",
+      "description": "Area parkir timur dekat kawasan Greenhouse untuk kemudahan mobilitas pengunjung.",
+      "meta": {
+        "openHours": "24 Jam"
+      }
     }
   ]
 }
