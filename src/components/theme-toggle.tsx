@@ -17,7 +17,7 @@ export function ThemeToggle() {
 
   if (!mounted) {
     return (
-      <Button variant="outline" size="icon" className="bg-white/95 dark:bg-black/50 backdrop-blur-sm shadow-md rounded-full border-0 pointer-events-auto">
+      <Button variant="outline" size="icon" className="h-10 w-10 bg-background/95 backdrop-blur-sm shadow-md rounded-full border-0 pointer-events-auto">
         <span className="sr-only">Loading theme</span>
       </Button>
     );
@@ -36,7 +36,7 @@ export function ThemeToggle() {
           onClick={() => {
             toggleTheme(effective === "light" ? "dark" : "light");
           }} 
-          className="bg-white/95 dark:bg-black/50 backdrop-blur-sm shadow-md rounded-full border-0 pointer-events-auto text-foreground"
+          className="h-10 w-10 bg-background/95 backdrop-blur-sm shadow-md rounded-full border-0 pointer-events-auto text-foreground"
         >
           {effective === "light" && <Sun className="h-5 w-5" />}
           {effective === "dark" && <Moon className="h-5 w-5" />}

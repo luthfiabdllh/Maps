@@ -62,7 +62,7 @@ export function MapDetailPanel({ dict }: MapDetailPanelProps) {
                   {isPoi ? getCategoryLabel((activeData as POILocation).category) : 'Wilayah'}
                 </span>
                 {isPoi && (activeData as POILocation).meta?.isHalal && (
-                  <span className="px-2.5 py-0.5 rounded-md text-xs font-semibold bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300">
+                  <span className="px-2.5 py-0.5 rounded-md text-xs font-semibold bg-chart-5/20 text-chart-5">
                     Halal
                   </span>
                 )}

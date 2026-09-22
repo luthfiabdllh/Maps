@@ -12,10 +12,10 @@ export function createPoiMarkerElement(poi: POILocation): HTMLDivElement {
     "w-8 h-8 rounded-full border-2 border-white shadow-lg flex items-center justify-center transition-transform hover:scale-110";
 
   let bgColor = "bg-muted";
-  if (poi.category === "rides") bgColor = "bg-marker-rides";
-  if (poi.category === "food") bgColor = "bg-marker-food";
-  if (poi.category === "facility") bgColor = "bg-marker-facility";
-  if (poi.category === "gate") bgColor = "bg-marker-gate";
+  if (poi.category === "rides") bgColor = "bg-chart-1";
+  if (poi.category === "food") bgColor = "bg-chart-2";
+  if (poi.category === "facility") bgColor = "bg-chart-3";
+  if (poi.category === "gate") bgColor = "bg-chart-4";
 
   inner.classList.add(bgColor);
   inner.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>`;
@@ -32,7 +32,7 @@ export function createRegionMarkerElement(region: RegionLocation): HTMLDivElemen
   el.className = "cursor-pointer pointer-events-auto flex flex-col items-center justify-center gap-1 group";
   
   const inner = document.createElement("div");
-  inner.className = "w-10 h-10 bg-indigo-600 rounded-full border-2 border-white shadow-lg flex items-center justify-center transition-transform group-hover:scale-110";
+  inner.className = "w-10 h-10 bg-chart-5 rounded-full border-2 border-white shadow-lg flex items-center justify-center transition-transform group-hover:scale-110";
   inner.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z"/><path d="M15 5.764v15"/><path d="M9 3.236v15"/></svg>`;
 
   const label = document.createElement("div");
