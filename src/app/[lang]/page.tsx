@@ -1,6 +1,8 @@
 import { MapView } from '@/features/map/components/map-view';
 import { MapHeader } from '@/features/map/components/map-header';
 import { MapDetailPanel } from '@/features/map/components/map-detail-panel';
+import { en } from '@/lib/dictionaries/en';
+import { id } from '@/lib/dictionaries/id';
 
 interface HomePageProps {
   params: Promise<{ lang: string }>;
@@ -11,11 +13,13 @@ interface HomePageProps {
  */
 export default async function HomePage({ params }: HomePageProps) {
   const { lang } = await params;
+  const dict = lang === 'en' ? en : id;
+
   return (
     <main className="relative w-screen h-screen overflow-hidden bg-background">
-      <MapHeader />
+      <MapHeader dict={dict} />
       <MapView />
-      <MapDetailPanel />
+      <MapDetailPanel dict={dict} />
     </main>
   );
 }

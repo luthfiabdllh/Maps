@@ -44,21 +44,20 @@ describe('i18n utilities', () => {
   describe('getDictionary()', () => {
     it('returns English dictionary for "en"', async () => {
       const dict = await getDictionary('en');
-      expect(dict.auth.login.title).toBe('Welcome back');
-      expect(dict.auth.login.submitButton).toBe('Sign in');
+      expect(dict.map.searchPlaceholder).toBe('Search locations...');
+      expect(dict.map.allCategories).toBe('All Categories');
     });
 
     it('returns Indonesian dictionary for "id"', async () => {
       const dict = await getDictionary('id');
-      expect(dict.auth.login.title).toBe('Selamat datang kembali');
-      expect(dict.auth.login.submitButton).toBe('Masuk');
+      expect(dict.map.searchPlaceholder).toBe('Cari lokasi...');
+      expect(dict.map.allCategories).toBe('Semua Kategori');
     });
 
     it('returned dictionary has all required keys', async () => {
       const dict = await getDictionary('en');
       expect(dict).toHaveProperty('common');
-      expect(dict).toHaveProperty('auth');
-      expect(dict).toHaveProperty('dashboard');
+      expect(dict).toHaveProperty('map');
       expect(dict).toHaveProperty('errors');
     });
   });

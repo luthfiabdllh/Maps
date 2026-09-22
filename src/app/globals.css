@@ -26,6 +26,14 @@
   --color-border: hsl(var(--border));
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
+  
+  --color-marker-rides: hsl(var(--marker-rides));
+  --color-marker-food: hsl(var(--marker-food));
+  --color-marker-facility: hsl(var(--marker-facility));
+  --color-marker-gate: hsl(var(--marker-gate));
+
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -57,6 +65,11 @@
   --input: 214.3 31.8% 91.4%;
   --ring: 222.2 84% 4.9%;
   --radius: 0.5rem;
+
+  --marker-rides: 0 84.2% 60.2%;
+  --marker-food: 37.7 92.1% 50.2%;
+  --marker-facility: 217.2 91.2% 59.8%;
+  --marker-gate: 142.1 76.2% 36.3%;
 }
 
 /* =========================================================
@@ -83,6 +96,11 @@
   --border: 217.2 32.6% 17.5%;
   --input: 217.2 32.6% 17.5%;
   --ring: 212.7 26.8% 83.9%;
+  
+  --marker-rides: 0 72.2% 50.6%;
+  --marker-food: 47.9 95.8% 53.1%;
+  --marker-facility: 212.6 100% 50%;
+  --marker-gate: 152.4 69% 45.1%;
 }
 
 /* System preference — applied when theme store is 'system' (no .light or .dark class) */
@@ -107,6 +125,11 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
+
+    --marker-rides: 0 72.2% 50.6%;
+    --marker-food: 47.9 95.8% 53.1%;
+    --marker-facility: 212.6 100% 50%;
+    --marker-gate: 152.4 69% 45.1%;
   }
 }
 

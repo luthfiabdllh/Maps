@@ -27,6 +27,9 @@ export async function generateMetadata({
   };
 }
 
+import { ThemeProvider } from '@/components/theme-provider';
+import { TooltipProvider } from '@/components/ui/tooltip';
+
 /**
  * Language layout — wraps all pages with providers.
  * Sets the html lang attribute for the correct locale.
@@ -39,9 +42,11 @@ export default async function LangLayout({ children, params }: LangLayoutProps) 
   }
 
   return (
-    <>
-      {children}
-      <Toaster richColors position="top-right" />
-    </>
+    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+      <TooltipProvider>
+        {children}
+        <Toaster richColors position="top-right" />
+      </TooltipProvider>
+    </ThemeProvider>
   );
 }

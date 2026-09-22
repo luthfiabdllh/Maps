@@ -11,12 +11,11 @@ export function createPoiMarkerElement(poi: POILocation): HTMLDivElement {
   inner.className =
     "w-8 h-8 rounded-full border-2 border-white shadow-lg flex items-center justify-center transition-transform hover:scale-110";
 
-  // Temporary styling for Phase 2. Will be refactored to CSS custom properties in Phase 3.
-  let bgColor = "bg-gray-500";
-  if (poi.category === "rides") bgColor = "bg-red-500";
-  if (poi.category === "food") bgColor = "bg-amber-500";
-  if (poi.category === "facility") bgColor = "bg-blue-500";
-  if (poi.category === "gate") bgColor = "bg-emerald-500";
+  let bgColor = "bg-muted";
+  if (poi.category === "rides") bgColor = "bg-marker-rides";
+  if (poi.category === "food") bgColor = "bg-marker-food";
+  if (poi.category === "facility") bgColor = "bg-marker-facility";
+  if (poi.category === "gate") bgColor = "bg-marker-gate";
 
   inner.classList.add(bgColor);
   inner.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>`;
