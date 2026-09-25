@@ -49,8 +49,8 @@ export function useMapInstance(containerRef: React.RefObject<HTMLDivElement | nu
       maxZoom: 20,
       maxBounds: MAX_BOUNDS,
       pitchWithRotate: false,
-      dragRotate: false,
-      pitch: 0,
+      dragRotate: true,
+      pitch: 30,
       attributionControl: false,
     });
 

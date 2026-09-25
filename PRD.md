@@ -29,7 +29,7 @@ Aplikasi Peta Interaktif Kawasan adalah web app responsif (mobile-first) yang me
 - **Image Overlay Engine**: Menampilkan aset peta WebP di atas koordinat geografis yang telah ditentukan.
 - **Gesture Control**: Mendukung *pan*, *pinch-to-zoom*, dan *double-tap to zoom*.
 - **Camera Boundary**: Mengunci batas geser (*maxBounds*) dan batas perbesaran (*minZoom* & *maxZoom*) agar kanvas kosong tidak terlihat.
-- **Locked Perspective**: Menonaktifkan rotasi bebas (*dragRotate: false*) dan kemiringan (*pitch: 0*) untuk menjaga keterbacaan ilustrasi 2.5D.
+- **Camera Perspective**: Mengaktifkan kemiringan 30 derajat (*pitch: 30*) dan rotasi bebas (*dragRotate: true*) untuk pengalaman perspektif 2.5D.
 
 ### 3.2. Penanda Interaktif (POI Markers & Clusters)
 

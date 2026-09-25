@@ -7,7 +7,7 @@ An interactive, responsive (mobile-first) 2.5D illustrated area map application 
 ## 🌟 Key Features
 
 - **Interactive 2.5D Vector & Raster Map**:
-  - Mapbox GL JS v3 engine with orthographic camera locking (`dragRotate: false`, `pitch: 0`).
+  - Mapbox GL JS v3 engine with 30° tilt perspective and rotation enabled (`dragRotate: true`, `pitch: 30`).
   - Seamless georeferenced WebP raster overlay calibrated to 4 corner coordinates.
   - Automatic time-of-day light presets (`dawn`, `day`, `dusk`, `night`) synchronized with user theme and local visitor hours.
 - **Semantic Zooming & POI Clustering**:

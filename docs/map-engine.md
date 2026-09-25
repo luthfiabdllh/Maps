@@ -8,8 +8,8 @@ This document provides a technical breakdown of the Mapbox GL JS engine, georefe
 
 The map engine is implemented using **Mapbox GL JS (v3.x)**. Initialization and lifecycle management are encapsulated inside [`use-map-instance.ts`](file:///Users/upikaachu/Developer/Works/SinergiMP/Maps/src/features/map/hooks/use-map-instance.ts).
 
-### Camera Constraints & Locked Perspective
-To preserve the spatial readability of hand-drawn/2.5D illustrated overlays, the camera is locked to an orthographic top-down view:
+### Camera Constraints & Perspective
+The camera perspective is set with a 30-degree tilt for 2.5D view and rotation enabled:
 
 ```typescript
 const mapInstance = new mapboxgl.Map({
@@ -24,8 +24,8 @@ const mapInstance = new mapboxgl.Map({
     [110.383, -7.115], // Northeast boundary [lng, lat]
   ],
   pitchWithRotate: false,
-  dragRotate: false,       // Disables 3D rotation
-  pitch: 0,                // Locks camera strictly perpendicular
+  dragRotate: true,        // Enables rotation
+  pitch: 30,               // 30-degree tilt perspective
   attributionControl: false,
 });
 ```
