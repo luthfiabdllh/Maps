@@ -180,3 +180,10 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Allow interacting with map when drawer/sheet is open */
+[data-slot="sheet-overlay"] {
+  pointer-events: none !important;
+  background-color: transparent !important;
+}
+

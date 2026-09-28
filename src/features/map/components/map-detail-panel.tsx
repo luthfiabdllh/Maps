@@ -36,10 +36,16 @@ export function MapDetailPanel({ dict }: MapDetailPanelProps) {
   };
 
   return (
-    <Sheet open={!!activeData} onOpenChange={(open) => !open && clearSelectedPoi()}>
+    <Sheet 
+      open={!!activeData} 
+      onOpenChange={(open) => !open && clearSelectedPoi()} 
+      modal={false}
+    >
       <SheetContent 
         side={isDesktop ? "left" : "bottom"} 
         className="w-full md:w-100 p-0 flex flex-col gap-0 border-none shadow-2xl rounded-t-3xl md:rounded-none h-[85vh] md:h-full pointer-events-auto"
+        onPointerDownOutside={(e) => e.preventDefault()}
+        onInteractOutside={(e) => e.preventDefault()}
       >
         <div className="relative w-full h-48 md:h-64 shrink-0 bg-muted">
           {activeData?.thumbnailUrl ? (
