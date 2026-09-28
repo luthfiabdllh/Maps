@@ -51,7 +51,7 @@ export function useMapInstance(containerRef: React.RefObject<HTMLDivElement | nu
       pitchWithRotate: false,
       dragRotate: true,
       pitch: 30,
-      bearing: -76,
+      bearing: -70,
       attributionControl: false,
     });
 
