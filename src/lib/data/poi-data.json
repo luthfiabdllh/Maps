@@ -5,28 +5,50 @@
       "name": "Kawasan Kebun",
       "coordinates": [110.380147, -7.118622],
       "icon": "Trees",
-      "description": "Area perkebunan asri, gazebo santai, dan kabin penginapan Curcool Cabin."
+      "description": "Area perkebunan asri, gazebo santai, dan kabin penginapan Curcool Cabin.",
+      "thumbnailUrl": "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=800&q=80"
+      ]
     },
     {
       "id": "zona-2",
       "name": "Kawasan Cafe",
       "coordinates": [110.378073, -7.11823],
       "icon": "Coffee",
-      "description": "Pusat kuliner Cafe Curcool, kolam rekreasi, dan area parkir utama."
+      "description": "Pusat kuliner Cafe Curcool, kolam rekreasi, dan area parkir utama.",
+      "thumbnailUrl": "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=800&q=80"
+      ]
     },
     {
       "id": "zona-3",
       "name": "Kawasan Headquarter",
       "coordinates": [110.378499, -7.118319],
       "icon": "Building2",
-      "description": "Kantor manajemen operasional pusat dan area peternakan."
+      "description": "Kantor manajemen operasional pusat dan area peternakan.",
+      "thumbnailUrl": "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80"
+      ]
     },
     {
       "id": "zona-4",
       "name": "Kawasan Greenhouse",
       "coordinates": [110.378811, -7.118066],
       "icon": "Sprout",
-      "description": "Area budidaya tanaman modern greenhouse dan fasilitas pendukung."
+      "description": "Area budidaya tanaman modern greenhouse dan fasilitas pendukung.",
+      "thumbnailUrl": "https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?auto=format&fit=crop&w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=800&q=80"
+      ]
     }
   ],
   "pois": [
@@ -39,8 +61,13 @@
       "regionId": "zona-2",
       "coordinates": [110.378261, -7.118062],
       "icon": "Waves",
-      "thumbnailUrl": "/placeholder-monas.jpg",
-      "description": "Kolam rekreasi air di area Kawasan Cafe.",
+      "thumbnailUrl": "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1544986581-efac024faf62?auto=format&fit=crop&w=800&q=80"
+      ],
+      "description": "Kolam rekreasi air jernih dengan suasana asri di area Kawasan Cafe. Cocok untuk bersantai dan menikmati pantulan langit senja.",
       "meta": {
         "openHours": "08:00 - 17:00",
         "ticketRequired": false
@@ -55,8 +82,12 @@
       "regionId": "zona-2",
       "coordinates": [110.378203, -7.118197],
       "icon": "Waves",
-      "thumbnailUrl": "/placeholder-monas.jpg",
-      "description": "Kolam air alami penunjang suasana asri di area cafe.",
+      "thumbnailUrl": "https://images.unsplash.com/photo-1500651230702-0e2d8a49d4ad?auto=format&fit=crop&w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1500651230702-0e2d8a49d4ad?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=800&q=80"
+      ],
+      "description": "Kolam air alami penunjang suasana sejuk di samping cafe dengan batuan alami dan suara gemericik air.",
       "meta": {
         "openHours": "08:00 - 17:00",
         "ticketRequired": false
@@ -71,8 +102,14 @@
       "regionId": "zona-2",
       "coordinates": [110.378106, -7.118154],
       "icon": "Coffee",
-      "thumbnailUrl": "/placeholder-food.jpg",
-      "description": "Tempat nongkrong santai menyajikan aneka racikan kopi nikmat, minuman segar, dan hidangan lezat.",
+      "thumbnailUrl": "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=800&q=80"
+      ],
+      "description": "Tempat nongkrong santai menyajikan aneka racikan kopi nikmat, minuman segar, pastry, dan hidangan lezat berlatar pemandangan alam.",
       "meta": {
         "openHours": "09:00 - 22:00",
         "isHalal": true
@@ -87,8 +124,12 @@
       "regionId": "zona-2",
       "coordinates": [110.377977, -7.118201],
       "icon": "Warehouse",
-      "thumbnailUrl": "/placeholder-toilet.jpg",
-      "description": "Gudang logistik dan penyimpanan peralatan cafe & fasilitas.",
+      "thumbnailUrl": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=800&q=80"
+      ],
+      "description": "Gudang logistik dan penyimpanan peralatan cafe & fasilitas kebersihan kawasan.",
       "meta": {}
     },
     {
@@ -100,8 +141,12 @@
       "regionId": "zona-2",
       "coordinates": [110.377887, -7.118424],
       "icon": "Warehouse",
-      "thumbnailUrl": "/placeholder-toilet.jpg",
-      "description": "Gudang penyimpanan perlengkapan perkebunan dan operasional.",
+      "thumbnailUrl": "https://images.unsplash.com/photo-1595246140625-573b715d11dc?auto=format&fit=crop&w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1595246140625-573b715d11dc?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80"
+      ],
+      "description": "Gudang penyimpanan perlengkapan perkebunan, pupuk organik, dan perkakas operasional.",
       "meta": {}
     },
     {
@@ -113,8 +158,12 @@
       "regionId": "zona-2",
       "coordinates": [110.378058, -7.118379],
       "icon": "Car",
-      "thumbnailUrl": "/placeholder-gate.jpg",
-      "description": "Area parkir barat yang luas untuk kendaraan roda dua dan roda empat pengunjung cafe.",
+      "thumbnailUrl": "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1590674899484-d5640e854abe?auto=format&fit=crop&w=800&q=80"
+      ],
+      "description": "Area parkir barat yang luas untuk kendaraan roda dua dan roda empat pengunjung cafe dengan pengawasan keamanan 24 jam.",
       "meta": {
         "openHours": "24 Jam"
       }
@@ -128,8 +177,13 @@
       "regionId": "zona-4",
       "coordinates": [110.378723, -7.118054],
       "icon": "Sprout",
-      "thumbnailUrl": "/placeholder-toilet.jpg",
-      "description": "Rumah kaca modern ramah lingkungan untuk pembudidayaan tanaman hortikultura dan agrikultur.",
+      "thumbnailUrl": "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=800&q=80"
+      ],
+      "description": "Rumah kaca modern ramah lingkungan untuk pembudidayaan tanaman hortikultura, sayuran organik, dan agrikultur edukatif.",
       "meta": {
         "openHours": "08:00 - 16:00"
       }
@@ -143,8 +197,12 @@
       "regionId": "zona-3",
       "coordinates": [110.378369, -7.118369],
       "icon": "Building2",
-      "thumbnailUrl": "/placeholder-monas.jpg",
-      "description": "Pusat kantor administrasi dan operasional manajemen kawasan.",
+      "thumbnailUrl": "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=800&q=80"
+      ],
+      "description": "Pusat kantor administrasi, pusat informasi pengunjung, dan operasional manajemen kawasan SinergiMP.",
       "meta": {
         "openHours": "08:00 - 17:00"
       }
@@ -158,8 +216,12 @@
       "regionId": "zona-3",
       "coordinates": [110.378517, -7.118439],
       "icon": "Egg",
-      "thumbnailUrl": "/placeholder-toilet.jpg",
-      "description": "Area peternakan ayam terpadu pendukung ekosistem pertanian alami.",
+      "thumbnailUrl": "https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?auto=format&fit=crop&w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1516467508483-a7212febe31a?auto=format&fit=crop&w=800&q=80"
+      ],
+      "description": "Area peternakan ayam petelur terpadu ramah lingkungan, menghasilkan telur segar pendukung ekosistem pertanian alami.",
       "meta": {}
     },
     {
@@ -171,8 +233,12 @@
       "regionId": "zona-1",
       "coordinates": [110.3802, -7.118618],
       "icon": "Zap",
-      "thumbnailUrl": "/placeholder-monas.jpg",
-      "description": "Menara transmisi listrik saluran udara tegangan ekstra tinggi (SUTET) penanda kawasan.",
+      "thumbnailUrl": "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=800&q=80"
+      ],
+      "description": "Menara transmisi listrik saluran udara tegangan ekstra tinggi (SUTET) yang menjadi penanda visual kawasan.",
       "meta": {}
     },
     {
@@ -183,8 +249,13 @@
       "regionId": "zona-1",
       "coordinates": [110.38021, -7.119063],
       "icon": "Home",
-      "thumbnailUrl": "/placeholder-gate.jpg",
-      "description": "Kabin penginapan privat dan nyaman di tengah asrinya alam terbuka kawasan kebun.",
+      "thumbnailUrl": "https://images.unsplash.com/photo-1587061949409-02df41d5e562?auto=format&fit=crop&w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1587061949409-02df41d5e562?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1449158743715-0a90ebb6d2d8?auto=format&fit=crop&w=800&q=80"
+      ],
+      "description": "Kabin penginapan privat bergaya A-frame kayu yang nyaman di tengah asrinya alam terbuka kawasan kebun.",
       "meta": {
         "openHours": "Check-in 14:00 | Check-out 12:00"
       }
@@ -198,8 +269,12 @@
       "regionId": "zona-1",
       "coordinates": [110.380079, -7.118577],
       "icon": "Umbrella",
-      "thumbnailUrl": "/placeholder-food.jpg",
-      "description": "Gazebo teduh untuk berkumpul, bersantai, dan menikmati makanan ringan bersama keluarga.",
+      "thumbnailUrl": "https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?auto=format&fit=crop&w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=800&q=80"
+      ],
+      "description": "Gazebo teduh untuk berkumpul, bersantai, menikmati semilir angin dan makanan ringan bersama keluarga.",
       "meta": {
         "openHours": "08:00 - 20:00",
         "isHalal": true
@@ -214,8 +289,12 @@
       "regionId": "zona-4",
       "coordinates": [110.378999, -7.118113],
       "icon": "Car",
-      "thumbnailUrl": "/placeholder-gate.jpg",
-      "description": "Area parkir timur dekat kawasan Greenhouse untuk kemudahan mobilitas pengunjung.",
+      "thumbnailUrl": "https://images.unsplash.com/photo-1590674899484-d5640e854abe?auto=format&fit=crop&w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1590674899484-d5640e854abe?auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=800&q=80"
+      ],
+      "description": "Area parkir timur dekat kawasan Greenhouse untuk kemudahan mobilitas dan akses langsung pengunjung.",
       "meta": {
         "openHours": "24 Jam"
       }
