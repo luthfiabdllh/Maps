@@ -26,6 +26,7 @@ const mapInstance = new mapboxgl.Map({
   pitchWithRotate: false,
   dragRotate: true,        // Enables rotation
   pitch: 30,               // 30-degree tilt perspective
+  bearing: -90,            // Initial -90 degree rotation
   attributionControl: false,
 });
 ```
